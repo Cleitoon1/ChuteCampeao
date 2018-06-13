@@ -45,10 +45,15 @@
     <Compile Include="Entites\Partida.cs" />
     <Compile Include="Entites\Rodada.cs" />
     <Compile Include="Entites\Time.cs" />
+    <Compile Include="Interfaces\IRepBase.cs" />
+    <Compile Include="Interfaces\IRepPartida.cs" />
+    <Compile Include="Interfaces\IRepEstadio.cs" />
+    <Compile Include="Interfaces\IRepCampeonato.cs" />
+    <Compile Include="Interfaces\IRepRodada.cs" />
+    <Compile Include="Interfaces\IRepTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
