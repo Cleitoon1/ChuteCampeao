@@ -14,7 +14,6 @@ namespace ChuteCampeao.Infra.Data.EntityConfig
             HasRequired(x => x.TimeVisitante).WithMany().HasForeignKey(x => x.TimeVisitanteId);
             HasRequired(x => x.Rodada).WithMany().HasForeignKey(x => x.RodadaId);
             HasRequired(x => x.Estadio).WithMany().HasForeignKey(x => x.EstadioId);
-            
         }
     }
 }

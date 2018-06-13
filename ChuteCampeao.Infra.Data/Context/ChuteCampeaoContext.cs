@@ -13,8 +13,11 @@ namespace ChuteCampeao.Infra.Data.Context
 
         }
 
+        public DbSet<Campeonato> Campeonatos { get; set; }
+        public DbSet<Rodada> Rodadas { get; set; }
         public DbSet<Partida> Partidas { get; set; }
         public DbSet<Time> Times { get; set; }
+        public DbSet<Estadio> Estadio { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,8 +30,11 @@ namespace ChuteCampeao.Infra.Data.Context
             modelBuilder.Properties<string>().Configure(x => x.HasColumnType("varchar"));
             modelBuilder.Properties<string>().Configure(x => x.HasMaxLength(100));
 
-            modelBuilder.Configurations.Add(new TimeConfiguration());
+            modelBuilder.Configurations.Add(new CampeonatoConfiguration());
+            modelBuilder.Configurations.Add(new RodadaConfiguration());
             modelBuilder.Configurations.Add(new PartidaConfiguration());
+            modelBuilder.Configurations.Add(new TimeConfiguration());
+            modelBuilder.Configurations.Add(new EstadioConfiguration());
         }
 
         public override int SaveChanges()

@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\ChuteCampeaoContext.cs" />
+    <Compile Include="EntityConfig\CampeonatoConfiguration.cs" />
+    <Compile Include="EntityConfig\EstadioConfiguration.cs" />
     <Compile Include="EntityConfig\PartidaConfiguration.cs" />
     <Compile Include="EntityConfig\RodadaConfiguration.cs" />
     <Compile Include="EntityConfig\TimeConfiguration.cs" />

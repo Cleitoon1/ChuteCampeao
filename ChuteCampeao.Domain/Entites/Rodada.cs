@@ -14,10 +14,15 @@ namespace ChuteCampeao.Domain.Entites
         public int Status { get; set; }
 
         public virtual Campeonato Campeonato { get; set; }
+
         public int CampeonatoId { get; set; }
+
+        public ICollection<Partida> Partidas { get; set; }
 
         public DateTime DataCadastro { get; set; }
 
-        public ICollection<Partida> Partidas { get; set; }
+        public DateTime DataAlteracao { get; set; }
+
+        public bool Ativo { get; set; }
     }
 }

@@ -13,7 +13,12 @@ namespace ChuteCampeao.Infra.Data.EntityConfig
         public RodadaConfiguration()
         {
             HasKey(x => x.Id);
-           
+            Property(x => x.DataInicio).IsRequired();
+            Property(x => x.DataFim).IsRequired();
+            Property(x => x.Status).IsRequired();
+            HasRequired(x => x.Campeonato).WithMany().HasForeignKey(x => x.CampeonatoId);
+            HasMany(x => x.Partidas).WithRequired(x => x.Rodada).HasForeignKey(x => x.RodadaId);
+
         }
 
     }

@@ -19,21 +19,26 @@ namespace ChuteCampeao.Domain.Entites
         public int PlacarTimeVisitante { get; set; }
 
         public virtual Time TimeLocal { get; set; }
+
         public int TimeLocalId { get; set; }
 
         public virtual Time TimeVisitante { get; set; }
+
         public int TimeVisitanteId { get; set; }
         
-
         public virtual Estadio Estadio { get; set; }
+
         public int EstadioId { get; set; }
 
         public virtual Rodada Rodada { get; set; }
+
         public int RodadaId { get; set; }
-        
-        public DateTime DataCadastro { get; set; }
 
         public int Status { get; set; }
+
+        public DateTime DataCadastro { get; set; }
+
+        public DateTime DataAlteracao { get; set; }
 
         public bool Ativo { get; set; }
     }
