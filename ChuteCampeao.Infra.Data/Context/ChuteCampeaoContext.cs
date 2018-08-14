@@ -46,16 +46,16 @@ namespace ChuteCampeao.Infra.Data.Context
                 {
                     if(entry.Property("DataCadastro") != null)
                         entry.Property("DataCadastro").CurrentValue = DateTime.Now;
-                    if (entry.Property("DataModificacao") != null)
-                        entry.Property("DataModificacao").CurrentValue = DateTime.Now;
+                    if (entry.Property("DataAlteracao") != null)
+                        entry.Property("DataAlteracao").CurrentValue = DateTime.Now;
                 }
 
                 if (entry.State == EntityState.Modified)
                 {
                     if (entry.Property("DataCadastro") != null)
                         entry.Property("DataCadastro").IsModified = false;
-                    if (entry.Property("DataModificacao") != null)
-                        entry.Property("DataModificacao").CurrentValue = DateTime.Now;
+                    if (entry.Property("DataAlteracao") != null)
+                        entry.Property("DataAlteracao").CurrentValue = DateTime.Now;
                 }
             }
 

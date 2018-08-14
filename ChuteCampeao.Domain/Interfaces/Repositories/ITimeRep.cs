@@ -1,8 +1,8 @@
 ﻿using ChuteCampeao.Domain.Entites;
 
-namespace ChuteCampeao.Domain.Interfaces
+namespace ChuteCampeao.Domain.Interfaces.Repositories
 {
-    public interface IRepTime : IRepBase<Time>
+    public interface ITimeRep : IBaseRep<Time>
     {
         Time BuscarPorNomeConhecido(string nome);
     }

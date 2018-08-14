@@ -1,9 +1,9 @@
 ﻿
 using System.Collections.Generic;
 
-namespace ChuteCampeao.Domain.Interfaces
+namespace ChuteCampeao.Domain.Interfaces.Repositories
 {
-    public interface IRepBase<T> where T : class
+    public interface IBaseRep<T> where T : class
     {
         void Insert(T obj);
 

@@ -3,13 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{E180F7BE-856F-448C-9B03-CCD506B13FD2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{E180F7BE-856F-448C-9B03-CCD506B13FD2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{3933C260-1FAD-48BB-83E1-7D9F4E26A59F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{254E3C2E-FDF9-4801-905B-C0A0AF4023B2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{254E3C2E-FDF9-4801-905B-C0A0AF4023B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{35374150-5B45-4697-BF26-65D70AADDDED}"
+	ProjectSection(SolutionItems) = preProject
+		ChuteCampeao.MVC\Web.config = ChuteCampeao.MVC\Web.config
+		ChuteCampeao.MVC\Web.Debug.config = ChuteCampeao.MVC\Web.Debug.config
+		ChuteCampeao.MVC\Web.Release.config = ChuteCampeao.MVC\Web.Release.config
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{5624440A-9AE2-47E9-A4A3-F78474BCA87E}"
 EndProject
@@ -23,7 +26,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Domain", "Chut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Infra.Data", "ChuteCampeao.Infra.Data\ChuteCampeao.Infra.Data.csproj", "{46E38878-E9BF-4E55-AD5B-71E9AE62F1A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Application", "ChuteCampeao.Application\ChuteCampeao.Application.csproj", "{EB9E9428-0CBD-4DC1-AEA6-1E46CAEFC0D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Infra.CrossCutting", "ChuteCampeao.Infra.CrossCutting\ChuteCampeao.Infra.CrossCutting.csproj", "{64F9762C-7E71-4DC7-A463-5BFACC6C1B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Business", "ChuteCampeao.Business\ChuteCampeao.Business.csproj", "{40E9641F-9403-4739-8620-AB9883DEB418}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - StartUp", "0 - StartUp", "{C916218E-DD72-4F11-B5C4-11FFB84EC18D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.StartUp", "ChuteCampeao.StartUp\ChuteCampeao.StartUp.csproj", "{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +52,18 @@ Global
 		{46E38878-E9BF-4E55-AD5B-71E9AE62F1A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46E38878-E9BF-4E55-AD5B-71E9AE62F1A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46E38878-E9BF-4E55-AD5B-71E9AE62F1A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB9E9428-0CBD-4DC1-AEA6-1E46CAEFC0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB9E9428-0CBD-4DC1-AEA6-1E46CAEFC0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB9E9428-0CBD-4DC1-AEA6-1E46CAEFC0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB9E9428-0CBD-4DC1-AEA6-1E46CAEFC0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64F9762C-7E71-4DC7-A463-5BFACC6C1B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F9762C-7E71-4DC7-A463-5BFACC6C1B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F9762C-7E71-4DC7-A463-5BFACC6C1B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F9762C-7E71-4DC7-A463-5BFACC6C1B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E9641F-9403-4739-8620-AB9883DEB418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E9641F-9403-4739-8620-AB9883DEB418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E9641F-9403-4739-8620-AB9883DEB418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E9641F-9403-4739-8620-AB9883DEB418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,7 +74,9 @@ Global
 		{72FFE9FD-AF87-4FBF-8F2B-CBC6B78E18AC} = {E180F7BE-856F-448C-9B03-CCD506B13FD2}
 		{C885DD45-1482-46C7-A0EF-B601A24185F6} = {35374150-5B45-4697-BF26-65D70AADDDED}
 		{46E38878-E9BF-4E55-AD5B-71E9AE62F1A5} = {91499153-B89C-4C2D-9879-82522A0BB808}
-		{EB9E9428-0CBD-4DC1-AEA6-1E46CAEFC0D6} = {254E3C2E-FDF9-4801-905B-C0A0AF4023B2}
+		{64F9762C-7E71-4DC7-A463-5BFACC6C1B66} = {B70F602F-084D-4DC2-ADC7-BAF45116230B}
+		{40E9641F-9403-4739-8620-AB9883DEB418} = {254E3C2E-FDF9-4801-905B-C0A0AF4023B2}
+		{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C} = {C916218E-DD72-4F11-B5C4-11FFB84EC18D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E71BF767-955F-4BE8-ABB5-27B2A81CFAC3}

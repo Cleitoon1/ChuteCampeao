@@ -1,4 +1,4 @@
-﻿using ChuteCampeao.Domain.Interfaces;
+﻿using ChuteCampeao.Domain.Interfaces.Repositories;
 using ChuteCampeao.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace ChuteCampeao.Infra.Data.Repositories
 {
-    public class RepBase<T> : IDisposable, IRepBase<T> where T : class
+    public class BaseRep<T> : IDisposable, IBaseRep<T> where T : class
     {
         protected ChuteCampeaoContext Db = new ChuteCampeaoContext();
 

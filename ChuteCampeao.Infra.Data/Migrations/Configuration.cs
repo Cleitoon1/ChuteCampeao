@@ -5,10 +5,11 @@ namespace ChuteCampeao.Infra.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Context.ChuteCampeaoContext>
+    public sealed class Configuration : DbMigrationsConfiguration<Context.ChuteCampeaoContext>
     {
         public Configuration()
         {
+            var type = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
             AutomaticMigrationsEnabled = true;
         }
 

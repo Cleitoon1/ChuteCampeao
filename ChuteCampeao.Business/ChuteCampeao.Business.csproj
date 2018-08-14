@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C885DD45-1482-46C7-A0EF-B601A24185F6}</ProjectGuid>
+    <ProjectGuid>{40E9641F-9403-4739-8620-AB9883DEB418}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChuteCampeao.Domain</RootNamespace>
-    <AssemblyName>ChuteCampeao.Domain</AssemblyName>
+    <RootNamespace>ChuteCampeao.Busines</RootNamespace>
+    <AssemblyName>ChuteCampeao.Business</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,25 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entites\Campeonato.cs" />
-    <Compile Include="Entites\Estadio.cs" />
-    <Compile Include="Entites\Partida.cs" />
-    <Compile Include="Entites\Rodada.cs" />
-    <Compile Include="Entites\Time.cs" />
-    <Compile Include="Interfaces\Repositories\IBaseRep.cs" />
-    <Compile Include="Interfaces\Repositories\IPartidaRep.cs" />
-    <Compile Include="Interfaces\Repositories\IEstadioRep.cs" />
-    <Compile Include="Interfaces\Repositories\ICampeonatoRep.cs" />
-    <Compile Include="Interfaces\Repositories\IRodadaRep.cs" />
-    <Compile Include="Interfaces\Repositories\ITimeRep.cs" />
-    <Compile Include="Interfaces\Services\IBaseService.cs" />
-    <Compile Include="Interfaces\Services\ICampeonatoService.cs" />
-    <Compile Include="Interfaces\Services\IEstadioService.cs" />
-    <Compile Include="Interfaces\Services\IPartidaService.cs" />
-    <Compile Include="Interfaces\Services\IRodadaService.cs" />
-    <Compile Include="Interfaces\Services\ITimeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\CampeonatoService.cs" />
+    <Compile Include="Services\EstadioService.cs" />
+    <Compile Include="Services\PartidaService.cs" />
+    <Compile Include="Services\RodadaService.cs" />
+    <Compile Include="Services\TimeService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ChuteCampeao.Domain\ChuteCampeao.Domain.csproj">
+      <Project>{C885DD45-1482-46C7-A0EF-B601A24185F6}</Project>
+      <Name>ChuteCampeao.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChuteCampeao.Infra.Data\ChuteCampeao.Infra.Data.csproj">
+      <Project>{46E38878-E9BF-4E55-AD5B-71E9AE62F1A5}</Project>
+      <Name>ChuteCampeao.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

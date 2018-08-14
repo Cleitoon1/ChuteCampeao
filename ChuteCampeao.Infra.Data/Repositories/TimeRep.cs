@@ -1,5 +1,5 @@
 ﻿using ChuteCampeao.Domain.Entites;
-using ChuteCampeao.Domain.Interfaces;
+using ChuteCampeao.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChuteCampeao.Infra.Data.Repositories
 {
-    public class RepTime : RepBase<Time>, IRepTime
+    public class TimeRep : BaseRep<Time>, ITimeRep
     {
         public Time BuscarPorNomeConhecido(string nome)
         {

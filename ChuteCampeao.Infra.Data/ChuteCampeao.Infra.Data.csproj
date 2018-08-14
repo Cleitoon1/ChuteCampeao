@@ -55,12 +55,12 @@
     <Compile Include="EntityConfig\TimeConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\RepBase.cs" />
-    <Compile Include="Repositories\RepEstadio .cs" />
-    <Compile Include="Repositories\RepPartida.cs" />
-    <Compile Include="Repositories\RepRodada.cs" />
-    <Compile Include="Repositories\RepCampeonato.cs" />
-    <Compile Include="Repositories\RepTime.cs" />
+    <Compile Include="Repositories\BaseRep.cs" />
+    <Compile Include="Repositories\EstadioRep.cs" />
+    <Compile Include="Repositories\PartidaRep.cs" />
+    <Compile Include="Repositories\RodadaRep.cs" />
+    <Compile Include="Repositories\CampeonatoRep.cs" />
+    <Compile Include="Repositories\TimeRep.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChuteCampeao.Domain\ChuteCampeao.Domain.csproj">
