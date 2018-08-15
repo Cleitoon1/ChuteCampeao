@@ -56,8 +56,6 @@ namespace ChuteCampeao.MVC.Controllers
             _estadioService.Update(Mapper.Map<Estadio>(model));
             return RedirectToAction("Index"); 
         }
-
-        [HttpPost]
         
         public ActionResult Deletar(int id)
         {

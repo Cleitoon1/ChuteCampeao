@@ -22,17 +22,17 @@ namespace ChuteCampeao.StartUp
             container.Register<Rodada>(Lifestyle.Scoped);
             container.Register<Time>(Lifestyle.Scoped);
 
-            container.Register<ICampeonatoService, CampeonatoService>(Lifestyle.Singleton);
-            container.Register<IEstadioService, EstadioService>(Lifestyle.Singleton);
-            container.Register<IPartidaService, PartidaService>(Lifestyle.Singleton);
-            container.Register<IRodadaService, RodadaService>(Lifestyle.Singleton);
-            container.Register<ITimeService, TimeService>(Lifestyle.Singleton);
+            container.Register<ICampeonatoService, CampeonatoService>(Lifestyle.Scoped);
+            container.Register<IEstadioService, EstadioService>(Lifestyle.Scoped);
+            container.Register<IPartidaService, PartidaService>(Lifestyle.Scoped);
+            container.Register<IRodadaService, RodadaService>(Lifestyle.Scoped);
+            container.Register<ITimeService, TimeService>(Lifestyle.Scoped);
 
-            container.Register<ICampeonatoRep, CampeonatoRep>(Lifestyle.Singleton);
-            container.Register<IEstadioRep, EstadioRep>(Lifestyle.Singleton);
-            container.Register<IPartidaRep, PartidaRep>(Lifestyle.Singleton);
-            container.Register<IRodadaRep, RodadaRep>(Lifestyle.Singleton);
-            container.Register<ITimeRep, TimeRep>(Lifestyle.Singleton);
+            container.Register<ICampeonatoRep, CampeonatoRep>(Lifestyle.Scoped);
+            container.Register<IEstadioRep, EstadioRep>(Lifestyle.Scoped);
+            container.Register<IPartidaRep, PartidaRep>(Lifestyle.Scoped);
+            container.Register<IRodadaRep, RodadaRep>(Lifestyle.Scoped);
+            container.Register<ITimeRep, TimeRep>(Lifestyle.Scoped);
 
         }
     }

@@ -8,11 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{254E3C2E-FDF9-4801-905B-C0A0AF4023B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{35374150-5B45-4697-BF26-65D70AADDDED}"
-	ProjectSection(SolutionItems) = preProject
-		ChuteCampeao.MVC\Web.config = ChuteCampeao.MVC\Web.config
-		ChuteCampeao.MVC\Web.Debug.config = ChuteCampeao.MVC\Web.Debug.config
-		ChuteCampeao.MVC\Web.Release.config = ChuteCampeao.MVC\Web.Release.config
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{5624440A-9AE2-47E9-A4A3-F78474BCA87E}"
 EndProject
