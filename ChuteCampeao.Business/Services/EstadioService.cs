@@ -17,5 +17,10 @@ namespace ChuteCampeao.Services.Services
         {
             this._estadioRep = estadioRep;
         }
+
+        public IEnumerable<Estadio> BuscarAtivos()
+        {
+            return _estadioRep.GetAll().Where(x => x.Status == true).ToList();
+        }
     }
 }

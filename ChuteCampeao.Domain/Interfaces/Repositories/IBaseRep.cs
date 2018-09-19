@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChuteCampeao.Domain.Interfaces.Repositories
 {
@@ -8,6 +9,8 @@ namespace ChuteCampeao.Domain.Interfaces.Repositories
         void Insert(T obj);
 
         T Get(int id);
+
+        IEnumerable<T> GetPaginated(IQueryable<T> query, string filter, bool isDescending, int initialPage, int pageSize);
 
         IEnumerable<T> GetAll();
 

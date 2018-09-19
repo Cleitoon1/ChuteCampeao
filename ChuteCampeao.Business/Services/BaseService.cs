@@ -54,5 +54,6 @@ namespace ChuteCampeao.Services.Services
         {
             _rep.Dispose();
         }
+
     }
 }

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<ChuteCampeao.MVC.ViewModels.TimeVM>
+
+@{
+    ViewBag.Title = "Times";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="row align-items-center">
+    <div class="col col-10">
+        <h1>Times</h1>
+    </div>
+    <div class="col col-2 ">
+        <a href='@Url.Action("Criar", "Time")' class="btn btn-primary float-right" role="button">
+            <i class="fas fa-plus"></i>&ensp;Novo Time
+        </a>
+    </div>
+</div>
+
+<hr class="my-2">
+<br />
+<table id="table" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAbreviado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apelido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFundacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        var cabecalho = [
+            { data: "Id", visible: false, searchable: false },
+            { data: "NomeCompleto" },
+            { data: "NomeAbreviado" },
+            { data: "Apelido" },
+            {
+                data: "DataFundacao", render: function (data, type, row, meta) {
+                    return Utils.DataTablesUtils.renderDataFormatValue(data, "dd/MM/yyyy");
+                }
+            },
+            { data: "Status", render: Utils.DataTablesUtils.renderAtivoValue },
+            {
+                orderable: false,
+                data: null,
+                className: "center",
+                defaultContent: `<button type="button" class="btn btn-outline-secondary btn-sm edit-btn">
+                                    <i class="far fa-edit"></i>&ensp;Editar
+                                </button>
+                                <button type="button" class="btn btn-outline-danger btn-sm delete-btn">
+                                    <i class="far fa-trash-alt"></i>&ensp;Excluir
+                                </button>
+                                `
+            }
+        ];
+        var dados = JSON.parse('@Html.Raw(Json.Encode(Model))');
+        Utils.DataTablesUtils.renderDataTable($("#table"), cabecalho, dados);
+
+        $("#table").on("click", ".edit-btn", function (e) {
+            var id = Utils.DataTablesUtils.getObjLineDataTable($("#table"), $(this).parents('tr')[0]).Id;
+            var url = '@Url.Action("Editar", "Time", new { id = "Id"})';
+            url = url.replace('Id', encodeURIComponent(id));
+            window.location.href = url;
+        });
+
+        $("#table").on("click", ".delete-btn", function (e) {
+            var obj = Utils.DataTablesUtils.getObjLineDataTable($("#table"), $(this).parents('tr')[0]);
+            var url = '@Url.Action("Excluir", "Time", new { id = "Id"})';
+            url = url.replace('Id', encodeURIComponent(obj.Id));
+            swal({
+                title: "Realizar Exclusão ?",
+                text: "Tem certeza que deseja excluir o time " + obj.NomeConhecido + " ?",
+                type: "warning",
+                showCancelButton: true,
+                cancelButtonText: "Não",
+                confirmButtonText: 'Sim',
+                showLoaderOnConfirm: true,
+                reverseButtons: true,
+                preConfirm: function (booDel) {
+                    if (booDel) {
+                        $.ajax({
+                            url: url,
+                            type: "delete",
+                            success: function () {
+                                swal("Sucesso!", "O time foi excluído com sucesso!", "success").then(function () {
+                                    document.location.reload();
+                                });
+                            },
+                            error: function (e) {
+                                swal("Erro!", "Ocorreu um erro ao realizar a ação!", "error");
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>

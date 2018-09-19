@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Infra.CrossCut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.Business", "ChuteCampeao.Business\ChuteCampeao.Business.csproj", "{40E9641F-9403-4739-8620-AB9883DEB418}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - StartUp", "0 - StartUp", "{C916218E-DD72-4F11-B5C4-11FFB84EC18D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - StartUp (IoC)", "0 - StartUp (IoC)", "{C916218E-DD72-4F11-B5C4-11FFB84EC18D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChuteCampeao.StartUp", "ChuteCampeao.StartUp\ChuteCampeao.StartUp.csproj", "{E2B35160-3A2F-470A-B3DD-1D6FF9C3409C}"
 EndProject

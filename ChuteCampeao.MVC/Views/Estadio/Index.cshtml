@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<ChuteCampeao.MVC.ViewModels.EstadioVM>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Estádios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Estádios</h2>
 
 <p>
     @Html.ActionLink("Novo Estádio", "Criar")
@@ -15,13 +15,33 @@
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apelido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInauguracao)
+        </th>
+        <th>
+            Ações
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apelido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInauguracao)
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |

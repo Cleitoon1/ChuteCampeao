@@ -1,24 +1,30 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*Layout Padrão*/
+
+.custom-navbar {
+    background-color: #2e4037;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.navbar-brand {
+    color: #ffffff !important;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.nav-item > a, .dropdown-custom-navbar > a {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.nav-item > a:hover, .dropdown-custom-navbar > a:hover {
+    text-decoration: none;
+    background-color: #2e4037;
+    color: #ffd800 !important;
+    text-decoration: underline;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.dropdown-custom-navbar {
+    background-color: #2e4037;
+}
+
+/*Home*/
+#carrouselHome{
+    width: 100%;
 }

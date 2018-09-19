@@ -17,5 +17,10 @@ namespace ChuteCampeao.Services.Services
         {
             this._timeRep = timeRep;
         }
+
+        public IEnumerable<Time> BuscarAtivos()
+        {
+            return _timeRep.GetAll().Where(x => x.Status == true).ToList();
+        }
     }
 }

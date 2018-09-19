@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChuteCampeao.Domain.Entites
 {
-    public class Partida
+    public class Partida : EntityBase
     {
-        public int Id { get; set; }
-
         public string Nome { get; set; }
 
         public DateTime Data { get; set; }
@@ -34,12 +32,6 @@ namespace ChuteCampeao.Domain.Entites
 
         public int RodadaId { get; set; }
 
-        public int Status { get; set; }
-
-        public DateTime DataCadastro { get; set; }
-
-        public DateTime DataAlteracao { get; set; }
-
-        public bool Ativo { get; set; }
+        public int Situacao { get; set; }
     }
 }

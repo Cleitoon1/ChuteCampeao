@@ -9,7 +9,7 @@ namespace ChuteCampeao.Infra.Data.EntityConfig
         {
             HasKey(x => x.Id);
             Property(x => x.NomeCompleto).IsRequired().HasMaxLength(150);
-            Property(x => x.NomeConhecido).IsRequired();
+            Property(x => x.NomeAbreviado).IsRequired();
             HasRequired(x => x.Estadio).WithMany().HasForeignKey(x => x.EstadioId);
             HasMany(x => x.PartidasLocal).WithRequired(x => x.TimeLocal).HasForeignKey(x => x.TimeLocalId);
             HasMany(x => x.PartidasVisitante).WithRequired(x => x.TimeVisitante).HasForeignKey(x => x.TimeVisitanteId);

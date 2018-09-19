@@ -9,5 +9,6 @@ namespace ChuteCampeao.Domain.Interfaces.Services
 {
     public interface IEstadioService : IBaseService<Estadio>
     {
+        IEnumerable<Estadio> BuscarAtivos();
     }
 }

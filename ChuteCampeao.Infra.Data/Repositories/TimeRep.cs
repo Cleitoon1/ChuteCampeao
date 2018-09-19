@@ -12,7 +12,7 @@ namespace ChuteCampeao.Infra.Data.Repositories
     {
         public Time BuscarPorNomeConhecido(string nome)
         {
-            return Db.Times.Where(t => t.NomeConhecido == nome).FirstOrDefault();
+            return Db.Times.Where(t => t.NomeAbreviado == nome).FirstOrDefault();
         }
     }
 }

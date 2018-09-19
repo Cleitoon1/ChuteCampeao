@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entites\Anexo.cs" />
+    <Compile Include="Entites\EntityBase.cs" />
     <Compile Include="Entites\Campeonato.cs" />
     <Compile Include="Entites\Estadio.cs" />
+    <Compile Include="Entites\Palpite.cs" />
     <Compile Include="Entites\Partida.cs" />
     <Compile Include="Entites\Rodada.cs" />
     <Compile Include="Entites\Time.cs" />

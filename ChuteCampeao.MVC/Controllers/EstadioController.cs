@@ -2,6 +2,7 @@
 using ChuteCampeao.Domain.Entites;
 using ChuteCampeao.Domain.Interfaces.Services;
 using ChuteCampeao.Infra.Data.Repositories;
+using ChuteCampeao.MVC.Helpers;
 using ChuteCampeao.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,16 @@ namespace ChuteCampeao.MVC.Controllers
 
         public ActionResult Index()
         {
-            var estadioVM = Mapper.Map<IEnumerable<Estadio>, IEnumerable<EstadioVM>>(_estadioService.GetAll());
-            return View(estadioVM);
+            var data = Mapper.Map<IEnumerable<Estadio>, IEnumerable<EstadioVM>>(_estadioService.GetAll());
+            return View(data);
         }
 
         public ActionResult Criar()
         {
-            return View();
+            EstadioVM estadioVM = new EstadioVM() {
+                LstStatus = Utils.ListarStatus()
+            };
+            return View(estadioVM);
         }
 
         [HttpPost]
@@ -46,7 +50,9 @@ namespace ChuteCampeao.MVC.Controllers
 
         public ActionResult Editar(int id)
         {
-            return View(Mapper.Map<EstadioVM>(_estadioService.GetById(id)));
+            EstadioVM data = Mapper.Map<EstadioVM>(_estadioService.GetById(id));
+            data.LstStatus = Utils.ListarStatus();
+            return View(data);
         }
 
         [HttpPost]
@@ -62,6 +68,5 @@ namespace ChuteCampeao.MVC.Controllers
             _estadioService.RemoveById(id);
             return RedirectToAction("Index");
         }
-
     }
 }

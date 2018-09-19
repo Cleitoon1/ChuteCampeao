@@ -1,15 +1,13 @@
 ﻿@model ChuteCampeao.MVC.ViewModels.EstadioVM
 
 @{
-    ViewBag.Title = "Detalhes";
+    ViewBag.Title = "Detalhes do Estádio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Detalhes</h2>
 
 <div>
-    <h4>EstadioVM</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
@@ -19,6 +17,37 @@
             @Html.DisplayFor(model => model.Nome)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInauguracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInauguracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.Display("Status", Model.Status == true ? "Ativo" : "Inativo")
+        </dd>
     </dl>
 </div>
 <p>

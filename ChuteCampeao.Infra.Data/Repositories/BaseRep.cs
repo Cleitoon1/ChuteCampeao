@@ -2,8 +2,11 @@
 using ChuteCampeao.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace ChuteCampeao.Infra.Data.Repositories
 {
@@ -26,6 +29,14 @@ namespace ChuteCampeao.Infra.Data.Repositories
         public IEnumerable<T> GetAll()
         {
             return Db.Set<T>().ToList();
+        }
+
+        public IEnumerable<T> GetPaginated(IQueryable<T> query, string sortField, bool isDescending, int initialPage, int pageSize)
+        {
+            var pi = typeof(T).GetProperty(sortField);
+            var newQuery = query.Skip(initialPage * pageSize);
+            newQuery = isDescending == true ? newQuery.OrderByDescending(x => pi.GetValue(x, null)) : newQuery.OrderBy(x => pi.GetValue(x, null));
+            return newQuery;
         }
 
         public void Update(T obj)
